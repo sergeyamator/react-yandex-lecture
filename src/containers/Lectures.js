@@ -5,16 +5,17 @@ import Lecture from '../components/Lecture';
 function mapStateToPros(state) {
   return {
     lectures: state.lectures,
-    teachers: state.teachers
+    teachers: state.teachers,
+    rooms: state.rooms
   }
 }
 
 
 class Lectures extends Component {
-  __getTeacherName(id) {
-    return this.props.teachers.reduce((name, teacher) => {
-       if (teacher.id === id) {
-         name = teacher.name;
+  __getName(data, id) {
+    return data.reduce((name, item) => {
+       if (item.id === id) {
+         name = item.name;
        }
 
        return name;
@@ -29,7 +30,9 @@ class Lectures extends Component {
             key={lecture.id}
             name={lecture.name}
             src={lecture.src}
-            teacher={this.__getTeacherName(lecture.teacherId)}
+            data={lecture.start}
+            teacher={this.__getName(this.props.lectures, lecture.teacherId)}
+            room={this.__getName(this.props.rooms, lecture.roomId)}
           />
         ))}
       </section>

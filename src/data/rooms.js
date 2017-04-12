@@ -1,6 +1,6 @@
-export default rooms = [
+export default [
   {
-    id: 15131,
+    id: 12541,
     name: 'blueWhale',
     maxStudentsCount: 40
   }
