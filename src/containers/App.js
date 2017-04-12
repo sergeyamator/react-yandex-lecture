@@ -8,7 +8,7 @@ class App extends Component {
   render () {
     return (
       <div className='main-app-container'>
-        <div className='main-app-nav'>Yandex Lessons</div>
+        <div className='main-title'>Yandex Lessons</div>
         <Lectures />
         <Footer />
       </div>
