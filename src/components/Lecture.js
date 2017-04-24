@@ -8,5 +8,6 @@ export default props => (
     <div className="lecture__room">{props.room}</div>
     <div>{props.schools}</div>
     <a className="lecture__link" href={props.src} target="_blank">Watch</a>
+    <a className="lecture__link" onClick={() => props.onEdit(props.id)}>Edit</a>
   </article>
 );

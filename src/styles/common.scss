@@ -1,0 +1,34 @@
+
+body {
+  background-color: $main-bg-color;
+  color: $accent-black;
+  font-family: 'Raleway', sans-serif;
+}
+
+.main-app-container {
+  padding-top: 2em;
+}
+
+.main-title {
+  font-size: 2em;
+  text-align: center;
+}
+
+footer {
+  font-size: 0.75em;
+  text-align: center;
+  padding-top: 10em;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $accent-blue;
+    }
+  }
+
+  .heart{
+    color: $accent-red;
+  }
+}

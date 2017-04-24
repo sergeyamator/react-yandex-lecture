@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Lecture from '../components/Lecture';
 
+import { openEditForm } from '../actions';
+
 function mapStateToPros(state) {
   return {
     lectures: state.lectures,
@@ -11,6 +13,13 @@ function mapStateToPros(state) {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    onEdit: id => {
+      dispatch(openEditForm(id))
+    }
+  }
+}
 
 class Lectures extends Component {
   __getName(data, id) {
@@ -44,12 +53,14 @@ class Lectures extends Component {
         {this.props.lectures.map(lecture => (
           <Lecture
             key={lecture.id}
+            id={lecture.id}
             name={lecture.name}
             src={lecture.src}
             data={lecture.start}
             teacher={this.__getName(this.props.teachers, lecture.teacherId)}
             room={this.__getName(this.props.rooms, lecture.roomId)}
             schools={this.__getName(this.props.schools, lecture.schoolsId)}
+            onEdit={this.props.onEdit}
           />
         ))}
       </section>
@@ -57,5 +68,5 @@ class Lectures extends Component {
   }
 }
 
-export default connect(mapStateToPros)(Lectures);
+export default connect(mapStateToPros, mapDispatchToProps)(Lectures);
 

@@ -9,7 +9,8 @@
     "build": "npm run clean && npm run build:webpack --progress --profile --colors",
     "dev": "NODE_ENV=development npm start",
     "start": "node devServer.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test":  "mocha --compilers js:babel-core/register  './src/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,7 @@
     "babel-preset-react-hmre": "^1.0.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.18.0",
+    "chai": "^3.5.0",
     "cross-env": "^1.0.6",
     "css-loader": "^0.23.1",
     "eslint": "^3.12.2",
@@ -41,6 +43,7 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "html-webpack-plugin": "^2.24.1",
+    "mocha": "^3.2.0",
     "node-sass": "^3.4.2",
     "redux-devtools": "^3.0.1",
     "redux-devtools-dock-monitor": "^1.0.1",
