@@ -1,7 +1,5 @@
 # The second yandex test task, working with lectures.
 
-# First test work for Yandex school
-
 ## Used technologies
 * React
 * Redux
